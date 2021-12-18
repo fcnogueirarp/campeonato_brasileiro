@@ -1,50 +1,32 @@
+import '../styles/Tabela.css';
+
 export default function Tabela({ children }) {
   const [
-    titulo,
-    visitantes,
+    nome,
     pontos,
     vitorias,
     empates,
     derrotas,
-    golsFeitos,
-    golsSofridos,
-    mandantes,
-    mpontos,
-    mvitorias,
-    mempates,
-    mderrotas,
-    mgolsFeitos,
-    mgolsSofridos,
+    total_gols_marcados,
+    total_gols_sofridos,
+    saldo,
   ] = children;
-
   return (
-    <>
-      <div>
-        <div className="flex justify-between align-middle items-center w-screen py-4 px-96">
-          <span className="flex justify-right w-1/6">{visitantes}</span>
-          <div className="flex justify-right w-screen">
-            <span className="flex justify-right w-1/6">{pontos}</span>
-            <span className="flex justify-right w-1/6">{vitorias}</span>
-            <span className="flex justify-right w-1/6">{empates}</span>
-            <span className="flex justify-right w-1/6">{derrotas}</span>
-            <span className="flex justify-right w-1/6">{golsFeitos}</span>
-            <span className="flex justify-right w-1/6">{golsSofridos}</span>
-          </div>
-          <span>{golsFeitos - golsSofridos}</span>
-        </div>
-        <div className="flex justify-between align-middle items-center w-screen py-4 px-96">
-          <span className="flex justify-right w-1/6">{mandantes}</span>
-          <div className="flex justify-right w-screen">
-            <span className="flex justify-right w-1/6">{mpontos}</span>
-            <span className="flex justify-right w-1/6">{mvitorias}</span>
-            <span className="flex justify-right w-1/6">{mempates}</span>
-            <span className="flex justify-right w-1/6">{mderrotas}</span>
-            <span className="flex justify-right w-1/6">{mgolsFeitos}</span>
-            <span className="flex justify-right w-1/6">{mgolsSofridos}</span>
-          </div>
-          <span>{mgolsFeitos - mgolsSofridos}</span>
-        </div>
-      </div>
-    </>
+    <div
+      className={`
+        flex justify-center items-center 
+        px-40 py-2 m-8 
+        w-screen h-auto`}
+    >
+      <span className="tabela">{1}</span>
+      <span className="tabela">{nome}</span>
+      <span className="tabela">{pontos}</span>
+      <span className="tabela"> {vitorias}</span>
+      <span className="tabela">{empates}</span>
+      <span className="tabela">{derrotas}</span>
+      <span className="tabela">{total_gols_marcados}</span>
+      <span className="tabela"> {total_gols_sofridos}</span>
+      <span className="tabela"> {saldo}</span>
+    </div>
   );
 }

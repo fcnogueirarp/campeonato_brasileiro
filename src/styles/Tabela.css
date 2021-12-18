@@ -1,0 +1,6 @@
+.tabela {
+  display: inline-flex;
+  justify-content: flex-end;
+  border: 1px solid;
+  width: 100vh;
+}

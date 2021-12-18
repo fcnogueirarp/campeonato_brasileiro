@@ -7,6 +7,8 @@ import { getNewId } from '../services/uuid/uuid';
 export default function Cb2003() {
   const [a2003, setA2003] = useState([]);
 
+  let times = [];
+
   useEffect(() => {
     (async function getApi() {
       const api2003 = await getApi2003();
@@ -14,42 +16,61 @@ export default function Cb2003() {
     })();
   }, []);
 
+  (function dadosPrincipais() {
+    a2003.map(dados => {
+      return (
+        times.push(dados.visitante),
+        times.push(dados.pontuacao_geral_visitante.total_pontos),
+        times.push(dados.pontuacao_geral_visitante.total_vitorias),
+        times.push(dados.pontuacao_geral_visitante.total_empates),
+        times.push(dados.pontuacao_geral_visitante.total_derrotas),
+        times.push(dados.pontuacao_geral_visitante.total_gols_marcados),
+        times.push(dados.pontuacao_geral_visitante.total_gols_sofridos),
+        times.push(
+          dados.pontuacao_geral_visitante.total_gols_marcados -
+            dados.pontuacao_geral_visitante.total_gols_sofridos
+        ),
+        times.push(dados.mandante),
+        times.push(dados.pontuacao_geral_mandante.total_pontos),
+        times.push(dados.pontuacao_geral_mandante.total_vitorias),
+        times.push(dados.pontuacao_geral_mandante.total_empates),
+        times.push(dados.pontuacao_geral_mandante.total_derrotas),
+        times.push(dados.pontuacao_geral_mandante.total_gols_marcados),
+        times.push(dados.pontuacao_geral_mandante.total_gols_sofridos),
+        times.push(
+          dados.pontuacao_geral_mandante.total_gols_marcados -
+            dados.pontuacao_geral_mandante.total_gols_sofridos
+        )
+      );
+    });
+  })();
+
+  let timesSeparados = [];
+  (function separaTimesEmVetores() {
+    const qtde = 8;
+    timesSeparados = times.reduce((vetor, item, index) => {
+      const dividirIndex = Math.floor(index / qtde);
+
+      if (!vetor[dividirIndex]) {
+        vetor[dividirIndex] = [];
+      }
+      vetor[dividirIndex].push(item);
+      return vetor;
+    }, []);
+  })();
+
+  let top10 = timesSeparados
+    .sort((a, b) => (a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0))
+    .filter((item, index) => {
+      if (index < 10) return item;
+      return '';
+    });
+
   return (
     <>
-      {a2003.map(item => {
-        const titulo = ['', 'P', 'V', 'E', 'D', 'GP', 'GC'];
-        return (
-          <Tabela key={getNewId()}>
-            {titulo}
-            {item.visitante}
-            {item.pontuacao_geral_visitante.total_pontos}
-            {item.pontuacao_geral_visitante.total_vitorias}
-            {item.pontuacao_geral_visitante.total_empates}
-            {item.pontuacao_geral_visitante.total_derrotas}
-            {item.pontuacao_geral_visitante.total_gols_marcados}
-            {item.pontuacao_geral_visitante.total_gols_sofridos}
-            {item.mandante}
-            {item.pontuacao_geral_mandante.total_pontos}
-            {item.pontuacao_geral_mandante.total_vitorias}
-            {item.pontuacao_geral_mandante.total_empates}
-            {item.pontuacao_geral_mandante.total_derrotas}
-            {item.pontuacao_geral_mandante.total_gols_marcados}
-            {item.pontuacao_geral_mandante.total_gols_sofridos}
-          </Tabela>
-        );
+      {top10.map(item => {
+        return <Tabela key={getNewId()}>{item}</Tabela>;
       })}
     </>
   );
 }
-
-// a2003
-// data_partida: "13/12/2003"
-// estadio: "Pinheirão"
-// hora_partida: "16h00"
-// mandante: "Paraná"
-// placar_mandante: 2
-// placar_visitante: 0
-// pontuacao_geral_mandante: {gols_fora_casa: 30, empates_fora_casa: 5, total_jogos: 46, gols_casa: 55, jogos_fora_casa: 23, …}
-// pontuacao_geral_visitante: {gols_fora_casa: 20, empates_fora_casa: 6, total_jogos: 46, gols_casa: 30, jogos_fora_casa: 23, …}
-// resultado: "vitoria_mandante"
-// visitante: "Vitória"
