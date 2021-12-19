@@ -1,23 +1,23 @@
 import { useEffect, useState } from 'react';
 import Tabela from '../components/Tabela';
 
-import { getApi2003 } from '../services/api/api';
+import { getApi2004 } from '../services/api/api';
 import { getNewId } from '../services/uuid/uuid';
 
-export default function Cb2003() {
-  const [a2003, setA2003] = useState([]);
+export default function Cb2004() {
+  const [a2004, setA2004] = useState([]);
 
   let times = [];
 
   useEffect(() => {
     (async function getApi() {
-      const api2003 = await getApi2003();
-      setA2003(api2003[api2003.length - 1].partidas);
+      const api2004 = await getApi2004();
+      setA2004(api2004[api2004.length - 1].partidas);
     })();
   }, []);
 
   (function dadosPrincipais() {
-    a2003.map(dados => {
+    a2004.map(dados => {
       return (
         times.push(dados.visitante),
         times.push(dados.pontuacao_geral_visitante.total_pontos),

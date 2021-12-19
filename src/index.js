@@ -33,9 +33,13 @@ import './index.css';
  * é comum ocorrerem renderizações "a mais".
  * Ele é retirado automaticamente em produção.
  */
+
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );

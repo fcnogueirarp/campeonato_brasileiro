@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Tabela from '../components/Tabela';
 
-import { getApi2003 } from '../services/api/api';
+import getApi2003 from '../services/api/api';
 import { getNewId } from '../services/uuid/uuid';
 
 export default function Cb2003() {
