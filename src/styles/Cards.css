@@ -1,0 +1,21 @@
+.container-card {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  border: 1px solid black;
+  padding: 5rem;
+}
+.destaque {
+  display: inline-flex;
+  justify-content: center;
+  width: 100vw;
+  border: 1px solid black;
+  padding: 2rem;
+}
+.card {
+  display: inline-flex;
+  justify-content: center;
+  width: 100vw;
+  border: 1px solid black;
+  padding: 2rem;
+}

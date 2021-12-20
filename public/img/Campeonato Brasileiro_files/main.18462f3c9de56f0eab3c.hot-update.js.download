@@ -1,0 +1,21 @@
+webpackHotUpdate("main",{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/Navegador.css":
+false,
+
+/***/ "./src/components/Navegador.jsx":
+/*!**************************************!*\
+  !*** ./src/components/Navegador.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/react-scripts/node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\casa\\Desktop\\projeto-base\\src\\components\\Navegador.jsx: Missing semicolon. (6:13)\n\n\u001b[0m \u001b[90m 4 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mNavegador\u001b[39m({ children }) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   console\u001b[33m.\u001b[39mlog{}\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m   \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 8 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"container-card\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 9 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mp\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"destaque\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:569:17)\n    at Object.raiseWithData (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:562:17)\n    at Object.raise (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:523:17)\n    at Object.semicolon (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:3571:10)\n    at Object.parseExpressionStatement (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:14068:10)\n    at Object.parseExpressionStatement (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:5370:18)\n    at Object.parseStatementContent (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:13659:19)\n    at Object.parseStatement (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:13521:17)\n    at Object.parseStatement (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:5344:24)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\casa\\Desktop\\projeto-base\\node_modules\\@babel\\parser\\lib\\index.js:14110:25)");
+
+/***/ }),
+
+/***/ "./src/styles/Navegador.css":
+false
+
+})
+//# sourceMappingURL=main.18462f3c9de56f0eab3c.hot-update.js.map

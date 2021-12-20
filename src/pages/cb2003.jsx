@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Tabela from '../components/Tabela';
+import Tabela from '../components/Table';
+import { dadosPrincipais, getTimesSeparados } from '../helpers/functions';
 
 import { getApi2003 } from '../services/api/api';
 import { getNewId } from '../services/uuid/uuid';
@@ -16,34 +17,7 @@ export default function Cb2003() {
     })();
   }, []);
 
-  (function dadosPrincipais() {
-    a2003.map(dados => {
-      return (
-        times.push(dados.visitante),
-        times.push(dados.pontuacao_geral_visitante.total_pontos),
-        times.push(dados.pontuacao_geral_visitante.total_vitorias),
-        times.push(dados.pontuacao_geral_visitante.total_empates),
-        times.push(dados.pontuacao_geral_visitante.total_derrotas),
-        times.push(dados.pontuacao_geral_visitante.total_gols_marcados),
-        times.push(dados.pontuacao_geral_visitante.total_gols_sofridos),
-        times.push(
-          dados.pontuacao_geral_visitante.total_gols_marcados -
-            dados.pontuacao_geral_visitante.total_gols_sofridos
-        ),
-        times.push(dados.mandante),
-        times.push(dados.pontuacao_geral_mandante.total_pontos),
-        times.push(dados.pontuacao_geral_mandante.total_vitorias),
-        times.push(dados.pontuacao_geral_mandante.total_empates),
-        times.push(dados.pontuacao_geral_mandante.total_derrotas),
-        times.push(dados.pontuacao_geral_mandante.total_gols_marcados),
-        times.push(dados.pontuacao_geral_mandante.total_gols_sofridos),
-        times.push(
-          dados.pontuacao_geral_mandante.total_gols_marcados -
-            dados.pontuacao_geral_mandante.total_gols_sofridos
-        )
-      );
-    });
-  })();
+  dadosPrincipais(a2003, times);
 
   let timesSeparados = [];
   (function separaTimesEmVetores() {
@@ -57,14 +31,10 @@ export default function Cb2003() {
       vetor[dividirIndex].push(item);
       return vetor;
     }, []);
+    return timesSeparados;
   })();
 
-  let top10 = timesSeparados
-    .sort((a, b) => (a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0))
-    .filter((item, index) => {
-      if (index < 10) return item;
-      return '';
-    });
+  let top10 = getTimesSeparados(timesSeparados);
 
   return (
     <>

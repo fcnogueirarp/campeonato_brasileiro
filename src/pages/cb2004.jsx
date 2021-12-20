@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Tabela from '../components/Tabela';
+import Tabela from '../components/Table';
 
 import { getApi2004 } from '../services/api/api';
 import { getNewId } from '../services/uuid/uuid';
@@ -62,9 +62,16 @@ export default function Cb2004() {
   let top10 = timesSeparados
     .sort((a, b) => (a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0))
     .filter((item, index) => {
-      if (index < 10) return item;
+      if (index < timesSeparados.length) return item;
       return '';
     });
+
+  // let campeao = timesSeparados
+  //   .sort((a, b) => (a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0))
+  //   .filter((item, index) => {
+  //     if (index < 10) return item;
+  //     return '';
+  //   });
 
   return (
     <>
